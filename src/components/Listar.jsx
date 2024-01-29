@@ -13,7 +13,7 @@ const Listar = ({estado}) => {
             (async function () {
                 //FETCH a la api y convertir en un JSON la respuesta
                 try {
-                    const respuesta = await (await fetch("http://localhost:3000/metro")).json()
+                    const respuesta = await (await fetch("https://65b81acc46324d531d55f341.mockapi.io/metro")).json()
                     //Asignar el resultado a la variable setRutas
                     setRutas(respuesta)
                     console.log("petición");
