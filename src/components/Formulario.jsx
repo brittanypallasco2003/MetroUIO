@@ -36,7 +36,7 @@ export const Formulario = ({setEstado}) => {
             return
         }
         try {
-            const url ="http://localhost:3000/metro"
+            const url ="https://65b81acc46324d531d55f341.mockapi.io/metro"
 						form.id = uuidv4()//agregar propiedad uuid
             await fetch(url,{
                 method:'POST',//Espicificar el tipo de acción

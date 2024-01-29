@@ -17,23 +17,5 @@
     "name": "typicode"
   },
   "metro": [
-    {
-      "id": "91e31511-c62c-4ca1-8dcf-569a9f9aa2e4",
-      "nombre": "Ruta56",
-      "sector": "sur-norte",
-      "salida": "Quitumbe",
-      "llegada": "Labrador",
-      "maquinista": "Juan",
-      "detalles": "nueva-ruta"
-    },
-    {
-      "id": "5962ed5e-58bd-4cf9-b2bc-4eb9d2503381",
-      "nombre": "Ruta55",
-      "sector": "sur-norte",
-      "salida": "Quitumbe",
-      "llegada": "Labrador",
-      "maquinista": "Francisco",
-      "detalles": "nueva-ruta"
-    }
   ]
 }
