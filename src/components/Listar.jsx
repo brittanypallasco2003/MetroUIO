@@ -6,6 +6,7 @@ const Listar = ({estado}) => {
     const [rutas, setRutas] = useState([])
     
     useEffect(() => {
+        
         //Verificar si la variable estado se ha cambiado
         //Verificar el tamaño del arreglo rutas
         if(estado || rutas.length>=0)
@@ -24,6 +25,26 @@ const Listar = ({estado}) => {
             })()
         }
     }, [estado])
+
+    //
+    const handleDelete = async (id) => {
+        try {
+            const confirmar = confirm("Vas a aliminar una ruta")
+            if (confirmar) {
+                const url = `https://65b81acc46324d531d55f341.mockapi.io/metro/${id}`
+                await fetch(url, {
+                    method: 'DELETE',
+                })
+                //Filtrar las rutas
+                const nuevasRutas = rutas.filter(ruta => ruta.id !== id)
+                //cargar las rutas filtradas en el setRutas
+                setRutas(nuevasRutas)
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <>
             {
@@ -48,7 +69,7 @@ const Listar = ({estado}) => {
                           <p className="text-gray-500">Detalles: {ruta.detalles}</p>
                           <div className='flex justify-between mt-3 lg:justify-end md:justify-end gap-3'>
                               <button className='bg-sky-900 text-white px-6 py-1 rounded-full'>Actualizar</button>
-                              <button className='bg-red-900 text-white px-6 py-1 rounded-full'>Eliminar</button>
+                              <button className='bg-red-900 text-white px-6 py-1 rounded-full' onClick={()=>{handleDelete(ruta.id)}}>Eliminar</button>
                           </div>
                       </div>
                   </div>
